@@ -1,19 +1,29 @@
-function answer3() {
-  function AddAPropToMe(someProps) {
+class AddAPropToMeComponent extends React.Component {
+  render() {
     return (
       <div>
-        {someProps.one}
-        , {someProps.two}
-        ,
+        {this.props.one}
+        {this.props.two}
+        {this.props.three}
         is a sort of fun game!
       </div>
     );
   }
-
-  return (
-    <AddAPropToMe
-      one={'Tic'}
-      two={'tac'}
-    />
-  );
 }
+
+const renderAddAPropToMeComponent = () => {
+  ReactDOM.render(
+    <div>
+      <AddAPropToMeComponent
+        one={'Tic '}
+        two={'tac '}
+        three={'toe '}/>
+    </div>,
+    document.getElementById('root')
+  );
+};
+
+links.push({
+  label: "Question 3 Answer",
+  clickHandler: renderAddAPropToMeComponent
+});

@@ -37,8 +37,7 @@ function answer3() {
   return (
     <AddAPropToMe
       one={'Tic'}
-      two={'tac'}
-    />
+      two={'tac'}/>
   );
 }
 

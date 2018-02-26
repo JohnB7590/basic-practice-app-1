@@ -13,4 +13,18 @@ function answer7() {
   } catch(e) {
     return String(e);
   }
+  return answer7();
+  ReactDOM.render(element, document.getElementById('root'));
 }
+
+
+const renderAnswer7 = () => {
+    ReactDOM.render(
+      answer7()
+    );
+}
+
+links.push({
+  label: "Question 7 Answer",
+  clickHandler: renderAnswer7
+});

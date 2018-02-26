@@ -1,11 +1,23 @@
-function answer5() {
-  class Dots extends React.Component {
+function DotsBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+
+    </div>
+  );
+}
+
+class Dots extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
         count: 0
       };
+      this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
       var counter = function() {
@@ -19,14 +31,35 @@ function answer5() {
     }
     render() {
       var dots = '...';
+      var dotsTwo = '..';
+      var dotsThree = '.';
 
       return (
         <div>
-          {dots}
+          <DotsBanner warn={this.state.count} />
+          <button onClick={this.componentDidMount}>
+            {this.state.count ? 'Hide' : 'Show'}
+          </button>
+          <div onChange={this.state.count}>
+            {dots}
+            {dotsTwo}
+            {dotsThree}
+          </div>
         </div>
       );
     }
   }
 
-  return <Dots/>;
-}
+  const renderDots = () => {
+    ReactDOM.render(
+      <div>
+        <Dots/>;
+      </div>,
+      document.getElementById('root')
+    );
+  }
+
+  links.push({
+    label: "Question 5 Answer",
+    clickHandler: renderDots
+  });

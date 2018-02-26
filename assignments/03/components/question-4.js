@@ -1,23 +1,40 @@
-function answer4() {
-  class InputComponent extends React.Component {
+class InputComponent extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
-        userInput: ''
+        data: ''
       };
+
+      this.updateState = this.updateState.bind(this);
     }
+
+    updateState(e) {
+       this.setState({data: e.target.value});
+    }
+
     render() {
       return (
         <div>
-          <input/>
+          <input type="text" value={this.state.data} onChange={this.updateState}/>
           <p>
-            The user typed `{this.state.userInput}`
+            The user typed '{this.state.data}'
           </p>
         </div>
       );
     }
   }
 
-  return <InputComponent/>;
-}
+  const renderInputComponent = () => {
+    ReactDOM.render(
+      <div>
+        <InputComponent />
+      </div>,
+      document.getElementById('root')
+    );
+  }
+
+links.push({
+  label: "Question 4 Answer",
+  clickHandler: renderInputComponent
+});
