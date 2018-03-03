@@ -62,7 +62,7 @@ class LifeCycle extends React.Component {
 
   componentDidUpdateTwo() {
     console.log(
-      "I'm terrified in a dimented newly surreal reality of hellish proportions. Help me! TRUMMMPPP!!!!" +
+      "I'm terrified in a dimented newly surreal reality of hellish proportions. Help me!" +
       this.state.minus
     );
   }
